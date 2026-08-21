@@ -28,7 +28,7 @@ This is my personal portfolio website, built to showcase my work and projects in
 
 You can check out the live website here 👇
 
-**[Click here](https://YOUR-VERCEL-DOMAIN.vercel.app/)**
+**[Click here](https://marwanshamekh.vercel.app/)**
 
 ---
 
