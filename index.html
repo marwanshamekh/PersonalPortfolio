@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marwan Shamekh | Front-End Developer</title>
+  <meta name="description"
+    content="Marwan Shamekh — Software and Web Developer and Computer Science & AI student, building fast, clean, accessible digital interfaces and scalable solutions.">
+
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+  <!-- Top navigation bar -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" aria-label="Marwan Home">
+        <svg class="brand-logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="50 50 100 100" width="28" height="28">
+          <!-- Logo Mark (Circle) -->
+          <circle cx="100" cy="100" r="46" fill="#0b0b0b" />
+
+          <!-- "ms" Monogram -->
+          <g stroke="#ffffff" stroke-width="5.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <!-- 'm' -->
+            <path d="M 66 112 V 96 Q 66 86 75 86 Q 84 86 84 96 V 112 M 84 96 Q 84 86 93 86 Q 102 86 102 96 V 112" />
+
+            <!-- 's' -->
+            <path
+              d="M 134 88 H 122 Q 112 88 112 95 Q 112 100 120 100 H 126 Q 134 100 134 106 Q 134 112 122 112 H 112" />
+          </g>
+        </svg>
+        <span class="brand-name">Marwan Shamekh</span>
+      </a>
+
+      <div class="header-actions">
+        <nav class="desktop-nav" aria-label="Primary Navigation">
+          <ul class="nav-list">
+            <li><a href="#works" class="nav-link">WORKS</a></li>
+            <li><a href="#about" class="nav-link">PHILOSOPHY</a></li>
+            <li><a href="#skills" class="nav-link">SKILLS</a></li>
+            <li><a href="#photography" class="nav-link">PHOTOGRAPHY</a></li>
+            <li><a href="#contact" class="nav-link">CONTACT</a></li>
+          </ul>
+        </nav>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile slide navigation drawer -->
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <ul class="mobile-nav-list">
+        <li><a href="#works" class="mobile-nav-link">WORKS</a></li>
+        <li><a href="#about" class="mobile-nav-link">PHILOSOPHY</a></li>
+        <li><a href="#skills" class="mobile-nav-link">SKILLS</a></li>
+        <li><a href="#photography" class="mobile-nav-link">PHOTOGRAPHY</a></li>
+        <li><a href="#contact" class="mobile-nav-link">CONTACT</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <p class="section-eyebrow">Marwan Shamekh · Front-End Developer</p>
+          <h1 class="hero-title">
+            Turning ideas into<br>
+            interactive experiences.
+          </h1>
+          <p class="hero-description">
+            I’m passionate about building modern web experiences that combine thoughtful design, clean code, and
+            meaningful interactions.
+          </p>
+          <div class="hero-actions">
+            <a href="#works" class="cta-link cta-primary">
+              <span>EXPLORE WORKS</span>
+              <svg class="arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.33337 8H12.6667M12.6667 8L8.66671 4M12.6667 8L8.66671 12" stroke="currentColor"
+                  stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <span class="cta-divider">/</span>
+            <a href="#contact" class="cta-link cta-secondary">LET'S CONNECT</a>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-image-frame" id="heroImageFrame">
+            <img src="assets/images/hero-portrait.webp" alt="Portrait of Marwan" class="hero-image" id="heroImage">
+            <div class="hero-badge" id="heroBadge" aria-hidden="true">Yup! That's Me</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Projects Section -->
+    <section class="projects-section" id="works">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">SHOWCASE · FEATURED CREATIONS</p>
+          <h2 class="section-title">Selected Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="browser-frame">
+              <div class="browser-header">
+                <div class="browser-dots">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                </div>
+                <div class="browser-address-bar">
+                  <span class="browser-domain">mahmoudshamekh.vercel.app/</span>
+                </div>
+              </div>
+              <div class="browser-viewport">
+                <img src="assets/images/project-5.webp" alt="Mechatronics Engineer Portfolio"
+                  class="browser-screen-img">
+              </div>
+            </div>
+            <div class="project-info">
+              <p class="project-tech-stack">HTML5 · CSS3 · JAVASCRIPT · GSAP</p>
+              <h3 class="project-title">
+                <a href="https://mahmoudshamekh.vercel.app/" target="_blank" class="project-title-link">Mechatronics
+                  Engineer Portfolio</a>
+              </h3>
+              <p class="project-description">
+                A modern and interactive portfolio website designed for a Mechatronics
+                Engineer, featuring an industrial-inspired visual identity, immersive
+                3D elements, smooth animations, and dedicated sections for technical
+                skills, engineering projects, experience, and achievements.
+              </p>
+              <a href="https://github.com/marwanmuhmmed25122007-tech/portfolio-mahmoud" target="_blank"
+                class="project-action-link">
+                <span>VIEW SOURCE</span>
+                <svg class="arrow-icon" width="14" height="14" viewBox="0 0 16 16" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.33337 8H12.6667M12.6667 8L8.66671 4M12.6667 8L8.66671 12" stroke="currentColor"
+                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project Card 1 -->
+          <article class="project-card">
+            <div class="browser-frame">
+              <div class="browser-header">
+                <div class="browser-dots">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                </div>
+                <div class="browser-address-bar">
+                  <span class="browser-domain">clothes-store-lilac.vercel.app</span>
+                </div>
+              </div>
+              <div class="browser-viewport">
+                <img src="assets/images/project-1.webp" alt="MOODk - Fashion E-Commerce" class="browser-screen-img">
+              </div>
+            </div>
+            <div class="project-info">
+              <p class="project-tech-stack">HTML5 · CSS3 · JAVASCRIPT</p>
+              <h3 class="project-title">
+                <a href="https://clothes-store-lilac.vercel.app/" target="_blank" class="project-title-link">MOODk -
+                  Fashion E-Commerce</a>
+              </h3>
+              <p class="project-description">
+                A modern fashion e-commerce platform for men, women, and kids. Users can explore products, search and
+                filter items, manage their wishlist and shopping cart, and enjoy a seamless shopping experience.
+              </p>
+              <a href="https://github.com/marwanmuhmmed25122007-tech/clothes-store" target="_blank"
+                class="project-action-link">
+                <span>VIEW SOURCE</span>
+                <svg class="arrow-icon" width="14" height="14" viewBox="0 0 16 16" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.33337 8H12.6667M12.6667 8L8.66671 4M12.6667 8L8.66671 12" stroke="currentColor"
+                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project Card 2 -->
+          <article class="project-card">
+            <div class="browser-frame">
+              <div class="browser-header">
+                <div class="browser-dots">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                </div>
+                <div class="browser-address-bar">
+                  <span class="browser-domain">airline-website-silk.vercel.app</span>
+                </div>
+              </div>
+              <div class="browser-viewport">
+                <img src="assets/images/project-2.webp" alt="Airline Website - Flight Booking Platform"
+                  class="browser-screen-img">
+              </div>
+            </div>
+            <div class="project-info">
+              <p class="project-tech-stack">HTML5 · CSS3 · JAVASCRIPT</p>
+              <h3 class="project-title">
+                <a href="https://airline-website-silk.vercel.app/" target="_blank" class="project-title-link">Airline
+                  Website - Flight Booking Platform</a>
+              </h3>
+              <p class="project-description">
+                A modern and responsive airline booking platform designed to provide a seamless flight reservation
+                experience. Users can search for flights, explore detailed flight information, make bookings, manage
+                their profiles, and contact customer support, with both light and dark theme support.
+              </p>
+              <a href="https://github.com/Mo2men-Be3der74/airline-website" target="_blank" class="project-action-link">
+                <span>VIEW SOURCE</span>
+                <svg class="arrow-icon" width="14" height="14" viewBox="0 0 16 16" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.33337 8H12.6667M12.6667 8L8.66671 4M12.6667 8L8.66671 12" stroke="currentColor"
+                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project Card 3 -->
+          <article class="project-card">
+            <div class="browser-frame">
+              <div class="browser-header">
+                <div class="browser-dots">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                </div>
+                <div class="browser-address-bar">
+                  <span class="browser-domain">game-reviews-omega.vercel.app</span>
+                </div>
+              </div>
+              <div class="browser-viewport">
+                <img src="assets/images/project-3.webp" alt="Game Review - Gaming Platform" class="browser-screen-img">
+              </div>
+            </div>
+            <div class="project-info">
+              <p class="project-tech-stack">HTML5 · CSS3 · JAVASCRIPT</p>
+              <h3 class="project-title">
+                <a href="https://game-reviews-omega.vercel.app/" target="_blank" class="project-title-link">Game Review
+                  -
+                  Gaming Platform</a>
+              </h3>
+              <p class="project-description">
+                A modern gaming platform where users can explore and discover games through categories, detailed
+                information, and an interactive interface designed for a smooth browsing experience.
+              </p>
+              <a href="http://github.com/marwanmuhmmed25122007-tech/game-review-website" target="_blank"
+                class="project-action-link">
+                <span>VIEW SOURCE</span>
+                <svg class="arrow-icon" width="14" height="14" viewBox="0 0 16 16" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.33337 8H12.6667M12.6667 8L8.66671 4M12.6667 8L8.66671 12" stroke="currentColor"
+                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Project Card 4 -->
+          <article class="project-card">
+            <div class="browser-frame">
+              <div class="browser-header">
+                <div class="browser-dots">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                </div>
+                <div class="browser-address-bar">
+                  <span class="browser-domain">courses-six-bay.vercel.app</span>
+                </div>
+              </div>
+              <div class="browser-viewport">
+                <img src="assets/images/project-4.webp" alt="Courses Website - Learning Platform"
+                  class="browser-screen-img">
+              </div>
+            </div>
+            <div class="project-info">
+              <p class="project-tech-stack">HTML5 · CSS3</p>
+              <h3 class="project-title">
+                <a href="https://courses-six-bay.vercel.app/" target="_blank" class="project-title-link">Courses Website
+                  - Learning Platform</a>
+              </h3>
+              <p class="project-description">
+                A clean and responsive courses website designed to showcase online learning content across multiple
+                pages. The project focuses on structured layouts, modern styling, and responsive design using pure HTML
+                and CSS.
+              </p>
+              <a href="https://github.com/marwanmuhmmed25122007-tech/courses-project" target="_blank"
+                class="project-action-link">
+                <span>VIEW SOURCE</span>
+                <svg class="arrow-icon" width="14" height="14" viewBox="0 0 16 16" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.33337 8H12.6667M12.6667 8L8.66671 4M12.6667 8L8.66671 12" stroke="currentColor"
+                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="browser-frame">
+              <div class="browser-header">
+                <div class="browser-dots">
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                  <span class="browser-dot"></span>
+                </div>
+                <div class="browser-address-bar">
+                  <span class="browser-domain">marwan-shamekh.vercel.app/</span>
+                </div>
+              </div>
+              <div class="browser-viewport">
+                <img src="assets/images/project-6.webp" alt="Courses Website - Learning Platform"
+                  class="browser-screen-img">
+              </div>
+            </div>
+            <div class="project-info">
+              <p class="project-tech-stack">HTML5 · CSS3 · JAVASCRIPT</p>
+              <h3 class="project-title">
+                <a href="https://marwan-shamekh.vercel.app/" target="_blank" class="project-title-link">Old Personal
+                  Portfolio</a>
+              </h3>
+              <p class="project-description">
+                My first web development project, built during the Web Development Training
+                provided by IEEE BUB SB. A responsive personal portfolio website designed
+                to showcase my skills, projects, and learning journey while applying
+                fundamental web development and version control concepts.
+              </p>
+              <a href="https://github.com/marwanmuhmmed25122007-tech/old-portfolio" target="_blank"
+                class="project-action-link">
+                <span>VIEW SOURCE</span>
+                <svg class="arrow-icon" width="14" height="14" viewBox="0 0 16 16" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.33337 8H12.6667M12.6667 8L8.66671 4M12.6667 8L8.66671 12" stroke="currentColor"
+                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+
+        </div>
+
+        <div class="projects-actions" id="projectsActions">
+          <button type="button" class="btn-toggle-projects" id="toggleProjectsBtn" aria-expanded="false">
+            <span class="btn-toggle-text">VIEW MORE</span>
+            <svg class="toggle-arrow-icon" width="14" height="14" viewBox="0 0 16 16" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 3.33337V12.6667M8 12.6667L12 8.66671M8 12.6667L4 8.66671" stroke="currentColor"
+                stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy & Story Section -->
+    <section class="philosophy-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">ABOUT</p>
+          <h2 class="section-title">My Philosophy &amp; Journey</h2>
+        </div>
+
+        <div class="philosophy-layout">
+          <div class="philosophy-narrative">
+            <p>
+              I believe in writing code that is as intuitive for the user as it is thoughtful under the hood. As a
+              Computer & Artificial Intelligence student, I’m driven by curiosity and a passion for building
+              meaningful digital experiences.
+            </p>
+            <p>
+              My journey spans web development, software engineering, and UI/UX design,
+              while I continue expanding my knowledge in artificial intelligence,
+              automation, and backend development.
+            </p>
+          </div>
+
+          <div class="core-values-container">
+            <div class="values-header">
+              <svg class="compass-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+              </svg>
+              <span class="values-header-title">CORE VALUES</span>
+            </div>
+
+            <ul class="values-list">
+              <li class="value-item">
+                <span class="value-number">01</span>
+                <div class="value-details">
+                  <h3 class="value-name">Clean Code</h3>
+                  <p class="value-desc">Writing clean, organized, and readable code with a focus on simplicity,
+                    maintainability, and good structure.</p>
+                </div>
+              </li>
+
+              <li class="value-item">
+                <span class="value-number">02</span>
+                <div class="value-details">
+                  <h3 class="value-name">User Experience</h3>
+                  <p class="value-desc">Creating intuitive and engaging interfaces where thoughtful UI/UX design meets
+                    smooth and responsive interactions.</p>
+                </div>
+              </li>
+
+              <li class="value-item">
+                <span class="value-number">03</span>
+                <div class="value-details">
+                  <h3 class="value-name">Continuous Learning</h3>
+                  <p class="value-desc">Always exploring new technologies, improving my skills, and expanding my
+                    knowledge across web development, software engineering, and AI.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expertise & Toolchain (Skills) Section -->
+    <section class="skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">TECHNOLOGY · THE CORE ENGINE</p>
+          <h2 class="section-title">Skills & Technologies</h2>
+          <p class="section-subtitle">
+            A collection of technologies and skills I use to build modern web experiences, create intuitive interfaces,
+            and develop my programming knowledge.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Column 1: Frontend & UI -->
+          <div class="skills-column">
+            <div class="column-header">
+              <svg class="column-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <h3 class="column-title">CORE SKILLS</h3>
+            </div>
+
+            <div class="skills-items">
+              <!-- Skill: JavaScript -->
+              <div class="skill-card">
+                <div class="skill-icon-badge js-badge">
+                  <span class="badge-text">JS</span>
+                </div>
+                <div class="skill-info">
+                  <h4 class="skill-name">JavaScript</h4>
+                  <p class="skill-desc">DOM manipulation, ES6+ features, interactive web experiences, and dynamic
+                    functionality.</p>
+                </div>
+              </div>
+
+              <!-- Skill: HTML5 & CSS3 -->
+              <div class="skill-card">
+                <div class="skill-icon-badge html-badge">
+                  <span class="badge-text">&lt;/&gt;</span>
+                </div>
+                <div class="skill-info">
+                  <h4 class="skill-name">HTML5 &amp; CSS3</h4>
+                  <p class="skill-desc">Semantic HTML, responsive layouts, Flexbox, Grid, modern styling, and
+                    animations.</p>
+                </div>
+              </div>
+
+              <!-- Skill: UI/UX Design -->
+              <div class="skill-card">
+                <div class="skill-icon-badge uiux-badge">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                    <path d="M2 12h20"></path>
+                  </svg>
+                </div>
+                <div class="skill-info">
+                  <h4 class="skill-name">UI/UX Design</h4>
+                  <p class="skill-desc">User interface design, visual hierarchy, responsive layouts, user experience,
+                    and interactive elements.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Programming & Systems -->
+          <div class="skills-column">
+            <div class="column-header">
+              <svg class="column-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              <h3 class="column-title">LANGUAGES &amp; CORE</h3>
+            </div>
+
+            <div class="skills-items">
+              <!-- Skill: Java -->
+              <div class="skill-card">
+                <div class="skill-icon-badge java-badge">
+                  <span class="badge-text">Java</span>
+                </div>
+                <div class="skill-info">
+                  <h4 class="skill-name">Java</h4>
+                  <p class="skill-desc">Object-oriented programming, classes and objects, inheritance, encapsulation,
+                    and core programming concepts.</p>
+                </div>
+              </div>
+
+              <!-- Skill: Python -->
+              <div class="skill-card">
+                <div class="skill-icon-badge python-badge">
+                  <span class="badge-text">Py</span>
+                </div>
+                <div class="skill-info">
+                  <h4 class="skill-name">Python</h4>
+                  <p class="skill-desc">Programming fundamentals, problem solving, scripting, and working with Python
+                    syntax and logic.</p>
+                </div>
+              </div>
+
+              <!-- Skill: C / C++ -->
+              <div class="skill-card">
+                <div class="skill-icon-badge cpp-badge">
+                  <span class="badge-text">C++</span>
+                </div>
+                <div class="skill-info">
+                  <h4 class="skill-name">C / C++</h4>
+                  <p class="skill-desc">Programming fundamentals, problem solving, algorithms, and core computational
+                    concepts.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Currently Exploring & Backend -->
+          <div class="skills-column">
+            <div class="column-header">
+              <svg class="column-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+              <h3 class="column-title">CURRENTLY LEARNING</h3>
+            </div>
+
+            <div class="skills-items">
+
+              <!-- Skill: Backend with PHP -->
+              <div class="skill-card highlight-card">
+                <div class="skill-icon-badge php-badge">
+                  <span class="badge-text">PHP</span>
+                </div>
+                <div class="skill-info">
+                  <div class="skill-title-row">
+                    <h4 class="skill-name">Backend with PHP</h4>
+                    <span class="learning-tag">Learning</span>
+                  </div>
+                  <p class="skill-desc">Currently learning backend development using PHP and exploring server-side
+                    programming.</p>
+                </div>
+              </div>
+
+              <!-- Skill: AI Automation -->
+              <div class="skill-card highlight-card">
+                <div class="skill-icon-badge ai-badge">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                  </svg>
+                </div>
+                <div class="skill-info">
+                  <div class="skill-title-row">
+                    <h4 class="skill-name">AI Automation</h4>
+                    <span class="learning-tag">Learning</span>
+                  </div>
+                  <p class="skill-desc">Currently learning AI automation concepts, workflows, and tools.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collaboration & Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-content">
+            <p class="section-eyebrow">COLLABORATION · LET'S CREATE</p>
+            <h2 class="contact-title">Have an idea in mind? Let’s build something together.</h2>
+            <p class="contact-description">
+              Whether you have a clear project idea or you're just getting started, feel free to reach out. I’m always
+              open to discussing new ideas, creative projects, and opportunities to collaborate.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-card-header">
+              <p class="contact-label">DIRECT CONTACT</p>
+              <a href="mailto:marwanmuhmmed25122007@gmail.com" class="contact-email">marwanmuhmmed25122007@gmail.com</a>
+            </div>
+            <div class="contact-card-divider"></div>
+            <div class="contact-socials-group">
+              <p class="contact-label">SOCIALS</p>
+              <div class="contact-social-icons">
+                <a href="https://www.instagram.com/maarwanmohammed/" target="_blank" rel="noopener noreferrer"
+                  class="social-circle-link" aria-label="Instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/marwan-shamekh-b1b2403a6/" target="_blank"
+                  rel="noopener noreferrer" class="social-circle-link" aria-label="linkedin">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+                <a href="https://github.com/marwanmuhmmed25122007-tech" target="_blank" rel="noopener noreferrer"
+                  class="social-circle-link" aria-label="github">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="contact-card-divider"></div>
+            <div class="contact-card-actions">
+              <a href="mailto:marwanmuhmmed25122007@gmail.com" class="contact-link-let">
+                <span>LET'S CONNECT</span>
+                <svg class="arrow-icon" width="14" height="14" viewBox="0 0 16 16" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.33337 8H12.6667M12.6667 8L8.66671 4M12.6667 8L8.66671 12" stroke="currentColor"
+                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <nav class="footer-nav" aria-label="Footer Navigation">
+        <a href="#works" class="footer-link">Works</a>
+        <a href="#about" class="footer-link">Philosophy</a>
+        <a href="#skills" class="footer-link">Skills</a>
+        <a href="#photography" class="footer-link">Photography</a>
+        <a href="#contact" class="footer-link">Contact</a>
+      </nav>
+
+
+      <div class="footer-wordmark">
+        <svg viewBox="0 0 560 95" class="footer-wordmark-svg" aria-label="SHAMEKH" role="img">
+          <text x="280" y="80" text-anchor="middle" class="wordmark-main">SHAMEKH</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <span class="footer-bottom-text">&copy; 2026 Marwan Shamekh</span>
+        <span class="footer-bottom-text">designed &amp; built with care</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
