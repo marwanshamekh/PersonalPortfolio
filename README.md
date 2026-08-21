@@ -2,17 +2,7 @@
 
 ![Portfolio Preview](assets/images/readmePhoto.webp)
 
-This is my personal portfolio website, built to showcase my work and projects in the field of web development. The goal is to present myself professionally to any potential client, company, or freelance opportunity.
-
----
-
-## ✨ Features
-
-- 🎨 Modern and attractive dark/light theme design
-- 📱 Fully responsive (works on all devices)
-- 💼 Clear and organized project showcase
-- ⚡ Fast and lightweight performance
-- 📬 Direct contact via email
+Welcome to my digital space! I am a Front-End Developer and Mechatronics Engineering student, passionate about bridging the gap between clean code, intuitive UI/UX design, and automation. This portfolio is a curated collection of my work, designed to showcase how I transform complex ideas into interactive, modern, and user-centric web experiences. Always open to new challenges, freelance opportunities, and collaborative projects.
 
 ---
 
@@ -26,8 +16,6 @@ This is my personal portfolio website, built to showcase my work and projects in
 
 ## 🔗 Live Demo
 
-You can check out the live website here 👇
-
 **[Click here](https://marwanshamekh.vercel.app/)**
 
 ---
@@ -35,11 +23,4 @@ You can check out the live website here 👇
 ## 👤 Author
 
 - **Marwan Shamekh**
-- 💡 Front-End Developer
-- 🌍 Passionate about programming & technology
 
----
-
-## ⭐ Support the Project
-
-If you like this work, feel free to give the repo a ⭐ — it really helps!
