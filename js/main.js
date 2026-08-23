@@ -48,27 +48,67 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileToggle.addEventListener('click', toggleMobileMenu);
   }
 
-  // Smooth scroll and close mobile drawer on link click
-  navLinks.forEach((link) => {
+  // -------------------------------------------------------------
+  // 1. Initialize Lenis Smooth Scroll
+  // -------------------------------------------------------------
+  let lenis;
+  if (typeof Lenis !== 'undefined') {
+    lenis = new Lenis({
+      duration: 1.2, // Smooth duration (around 1.2s)
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo easing curve
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true, // Smooth mouse wheel scrolling enabled
+      touchMultiplier: 2,
+      // Native touch scrolling is preserved on mobile devices by default
+    });
+
+    // -------------------------------------------------------------
+    // 2. RequestAnimationFrame Loop
+    // -------------------------------------------------------------
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }
+
+  // Smooth scroll and close mobile drawer on anchor link click
+  const allAnchorLinks = document.querySelectorAll('a[href^="#"]');
+  allAnchorLinks.forEach((link) => {
     link.addEventListener('click', (event) => {
       const targetId = link.getAttribute('href');
-      if (targetId && targetId.startsWith('#')) {
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          event.preventDefault();
-          
-          if (mobileNav && mobileNav.classList.contains('is-open')) {
-            toggleMobileMenu();
+      if (targetId && targetId !== '#' && targetId.length > 1) {
+        try {
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            event.preventDefault();
+            
+            if (mobileNav && mobileNav.classList.contains('is-open')) {
+              toggleMobileMenu();
+            }
+
+            const headerOffset = 80;
+
+            if (lenis) {
+              // Smooth scroll via Lenis with header offset
+              lenis.scrollTo(targetElement, {
+                offset: -headerOffset,
+                duration: 1.2
+              });
+            } else {
+              // Native fallback if Lenis CDN is unavailable
+              const elementPosition = targetElement.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+              });
+            }
           }
-
-          const headerOffset = 80;
-          const elementPosition = targetElement.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: 'smooth'
-          });
+        } catch (e) {
+          // Ignore invalid selector queries if any
         }
       }
     });
@@ -159,13 +199,19 @@ document.addEventListener('DOMContentLoaded', () => {
           const worksSection = document.getElementById('works');
           if (worksSection) {
             const headerOffset = 80;
-            const elementPosition = worksSection.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
-            });
+            if (lenis) {
+              lenis.scrollTo(worksSection, {
+                offset: -headerOffset,
+                duration: 1.2
+              });
+            } else {
+              const elementPosition = worksSection.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+              });
+            }
           }
         }
       });
