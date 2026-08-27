@@ -48,9 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileToggle.addEventListener('click', toggleMobileMenu);
   }
 
-  // -------------------------------------------------------------
-  // 1. Initialize Lenis Smooth Scroll
-  // -------------------------------------------------------------
+  // Initialize Lenis Smooth Scroll
   let lenis;
   if (typeof Lenis !== 'undefined') {
     lenis = new Lenis({
@@ -63,9 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Native touch scrolling is preserved on mobile devices by default
     });
 
-    // -------------------------------------------------------------
-    // 2. RequestAnimationFrame Loop
-    // -------------------------------------------------------------
+    // RequestAnimationFrame Loop
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
