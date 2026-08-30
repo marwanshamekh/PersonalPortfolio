@@ -557,11 +557,14 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.25rem;
+  width: 100%;
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  min-width: 0;
 }
 
 /* Browser Window Frame Preview */

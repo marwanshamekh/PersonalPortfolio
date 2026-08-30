@@ -177,6 +177,10 @@ document.addEventListener('DOMContentLoaded', () => {
           }
           toggleProjectsBtn.classList.add('is-expanded');
           toggleProjectsBtn.setAttribute('aria-expanded', 'true');
+
+          if (lenis) {
+            lenis.resize();
+          }
         } else {
           projectCards.forEach((card, index) => {
             if (index >= initialVisibleCount) {
@@ -190,6 +194,10 @@ document.addEventListener('DOMContentLoaded', () => {
           }
           toggleProjectsBtn.classList.remove('is-expanded');
           toggleProjectsBtn.setAttribute('aria-expanded', 'false');
+
+          if (lenis) {
+            lenis.resize();
+          }
 
           // Smoothly scroll to the top of the projects section
           const worksSection = document.getElementById('works');
