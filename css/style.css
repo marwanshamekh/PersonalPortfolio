@@ -1086,10 +1086,6 @@ body {
   gap: 0.5rem;
 }
 
-.eyebrow-icon {
-  color: var(--text-eyebrow);
-  flex-shrink: 0;
-}
 
 .services-grid {
   display: grid;
