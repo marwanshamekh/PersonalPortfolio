@@ -989,14 +989,24 @@ body {
   color: #6b21a8;
 }
 
-.ai-badge {
-  background-color: #fef3c7;
-  color: #b45309;
-}
-
-.php-badge {
+.ps-badge {
   background-color: #ede9fe;
   color: #5b21b6;
+}
+
+.tw-badge {
+  background-color: #ccfbf1;
+  color: #0f766e;
+}
+
+.co-badge {
+  background-color: #fed7aa;
+  color: #9a3412;
+}
+
+.git-badge {
+  background-color: #fee2e2;
+  color: #b91c1c;
 }
 
 .badge-text {
@@ -1071,6 +1081,26 @@ body {
 [data-theme="dark"] .php-badge {
   background-color: #23163a;
   color: #c4b5fd;
+}
+
+[data-theme="dark"] .ps-badge {
+  background-color: #2e1a47;
+  color: #c4b5fd;
+}
+
+[data-theme="dark"] .tw-badge {
+  background-color: #0a2e2a;
+  color: #5eead4;
+}
+
+[data-theme="dark"] .co-badge {
+  background-color: #3a2008;
+  color: #fdba74;
+}
+
+[data-theme="dark"] .git-badge {
+  background-color: #3a1414;
+  color: #fca5a5;
 }
 
 /* Services section */
