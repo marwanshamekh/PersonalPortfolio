@@ -357,4 +357,87 @@
     letter-spacing: 0.08em;
   }
 }
+
+/* Modal responsive rules */
+@media (max-width: 768px) {
+  .project-modal-backdrop {
+    padding: 1.25rem 0.75rem;
+    align-items: flex-start;
+  }
+
+  .project-modal-dialog {
+    padding: 1.75rem 1.5rem 1.35rem;
+    border-radius: 18px;
+    max-height: calc(100vh - 1.5rem);
+  }
+
+  .project-modal-info-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-modal-image-wrapper {
+    height: 180px;
+    margin-bottom: 1.25rem;
+  }
+
+  .project-modal-close {
+    top: 1rem;
+    right: 1rem;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-modal-backdrop {
+    padding: 1rem 0.5rem;
+  }
+
+  .project-modal-dialog {
+    padding: 1.5rem 1.15rem 1.25rem;
+    border-radius: 16px;
+  }
+
+  .project-modal-header {
+    gap: 1.15rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .modal-action-link {
+    font-size: 0.7rem;
+  }
+
+  .project-modal-image-wrapper {
+    height: 150px;
+    margin-bottom: 1.15rem;
+  }
+
+  .project-modal-nav {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+    padding-top: 1rem;
+  }
+
+  .project-nav-item {
+    max-width: 100%;
+  }
+
+  .project-nav-next {
+    text-align: left;
+    align-items: flex-start;
+    margin-left: 0;
+  }
+
+  .project-feature-text {
+    font-size: 0.82rem;
+  }
+
+  .detail-value {
+    font-size: 0.82rem;
+  }
+}
  
