@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggleTheme = () => {
     const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
+
     document.documentElement.setAttribute('data-theme', newTheme);
     try {
       localStorage.setItem('theme', newTheme);
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const targetElement = document.querySelector(targetId);
           if (targetElement) {
             event.preventDefault();
-            
+
             if (mobileNav && mobileNav.classList.contains('is-open')) {
               toggleMobileMenu();
             }
@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
       liveUrl: 'https://github.com/marwanshamekh/Hospital-Crowding-Prediction',
       sourceUrl: 'https://github.com/marwanshamekh/Hospital-Crowding-Prediction',
       role: 'Machine Learning & AI Developer',
-      techStack: 'Python, Scikit-Learn, Pandas, NumPy, Decision Trees, Streamlit',
+      techStack: 'Python, Scikit-Learn, Pandas, NumPy',
       coreFeatures: [
         'Real-time AI prediction engine forecasting hospital crowding and emergency room occupancy levels',
         'High accuracy classification pipeline (99.17%) powered by optimized Decision Tree algorithms',
@@ -383,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
       liveUrl: 'https://game-reviews-omega.vercel.app/',
       sourceUrl: 'http://github.com/marwanmuhmmed25122007-tech/game-review-website',
       role: 'Front-End Developer',
-      techStack: 'HTML5, CSS3, JavaScript (ES6+), Web Animations, Modern CSS Grid',
+      techStack: 'HTML5, CSS3, JavaScript (ES6+),  Modern CSS Grid',
       coreFeatures: [
         'Dynamic game discovery hub with platform filtering, genre categorization, and release tracking',
         'Immersive individual game review pages with high-resolution visual previews and gameplay summaries',
