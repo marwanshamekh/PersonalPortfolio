@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
       liveUrl: null,
       sourceUrl: 'https://github.com/marwanshamekh/Hospital-Crowding-Prediction',
       role: 'Machine Learning & AI Developer',
-      techStack: 'Python, Scikit-Learn, Pandas, NumPy',
+      techStack: 'PYTHON, PANDAS, NUMPY, SCIKIT-LEARN, MACHINE LEARNING, DECISION TREE, FLASK, REST API, JAVASCRIPT, HTML, CSS',
       coreFeatures: [
         'Real-time AI prediction engine forecasting hospital crowding and emergency room occupancy levels',
         'High accuracy classification pipeline (99.17%) powered by optimized Decision Tree algorithms',
