@@ -4,88 +4,93 @@
     padding: 0 1.75rem;
   }
 }
- 
+
 /* Small laptops / large tablets */
 @media (max-width: 1024px) {
   .hero-container {
     gap: 3rem;
   }
- 
+
   .hero-image-frame {
     max-width: 380px;
   }
- 
+
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
   }
- 
+
   .projects-grid .project-card:nth-child(odd):last-child {
     grid-column: span 2;
     max-width: 600px;
     margin: 0 auto;
     width: 100%;
   }
- 
+
   .philosophy-layout {
     gap: 3.5rem;
   }
- 
+
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
   }
- 
+
   .skills-grid .skills-column:last-child {
     grid-column: span 2;
   }
- 
+
   .skills-grid .skills-column:last-child .skills-items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
   }
- 
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
   .contact-layout {
     gap: 3rem;
   }
 
 
 }
- 
+
 
 @media (max-width: 900px) {
   .hero-container {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
- 
+
   .hero-content {
     max-width: 100%;
   }
- 
+
   .hero-media {
     justify-content: center;
     order: -1;
   }
- 
+
   .hero-image-frame {
     max-width: 360px;
   }
- 
+
   .philosophy-layout {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
- 
+
   .contact-layout {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
- 
+
   .contact-content {
     max-width: 100%;
   }
- 
+
   .contact-card {
     width: 100%;
     max-width: 480px;
@@ -101,7 +106,7 @@
     order: 1;
   }
 }
- 
+
 /* Tablet and mobile screens */
 @media (max-width: 768px) {
   .container {
@@ -119,20 +124,21 @@
   .mobile-toggle {
     display: flex;
   }
- 
+
   .hero-section {
     padding: 3rem 0 4.5rem;
     min-height: auto;
   }
- 
+
   .hero-image-frame {
     max-width: 340px;
     border-radius: var(--radius-lg);
   }
- 
+
   .projects-section,
   .philosophy-section,
   .skills-section,
+  .services-section,
   .contact-section {
     padding: 4.5rem 0;
   }
@@ -142,7 +148,7 @@
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
- 
+
   .projects-grid .project-card,
   .projects-grid .project-card:last-child,
   .projects-grid .project-card:nth-child(odd):last-child {
@@ -151,21 +157,30 @@
     margin: 0;
     width: 100%;
   }
- 
+
   .skills-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
- 
+
   .skills-grid .skills-column:last-child {
     grid-column: auto;
   }
- 
+
   .skills-grid .skills-column:last-child .skills-items {
     display: flex;
     flex-direction: column;
   }
- 
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .service-card {
+    padding: 1.75rem 1.5rem;
+  }
+
   .footer-nav {
     flex-wrap: wrap;
     justify-content: center;
@@ -180,7 +195,7 @@
     text-align: center;
   }
 }
- 
+
 /* Small mobile devices */
 @media (max-width: 480px) {
   .container {
@@ -264,7 +279,7 @@
   .media-items {
     grid-template-columns: 1fr;
   }
- 
+
   .header-container {
     height: 64px;
   }
@@ -272,73 +287,77 @@
   .brand-name {
     font-size: 13px;
   }
- 
+
   .hero-title {
     font-size: 2.15rem;
   }
- 
+
   .hero-description {
     font-size: 0.98rem;
   }
- 
+
   .hero-actions {
     flex-wrap: wrap;
     gap: 0.75rem 1rem;
   }
- 
+
   .section-title {
     font-size: 1.85rem;
   }
- 
+
+  .service-card {
+    padding: 1.5rem 1.25rem;
+  }
+
   .contact-card {
     padding: 1.5rem;
   }
- 
+
   .contact-email {
     font-size: 1.15rem;
     word-break: break-word;
     overflow-wrap: break-word;
   }
- 
+
   .contact-card-actions {
     width: 100%;
   }
 }
- 
+
 /* Very small phones (iPhone SE and similar ~360px and below) */
 @media (max-width: 360px) {
   .header-container {
     height: 60px;
   }
- 
+
   .brand-logo svg,
   .brand-logo-icon {
     width: 26px;
     height: 26px;
   }
- 
+
   .brand-name {
     font-size: 11.5px;
   }
- 
+
   .theme-toggle,
   .mobile-toggle {
     width: 34px;
     height: 34px;
   }
- 
+
   .hero-title {
     font-size: 1.85rem;
   }
- 
+
   .cta-link {
     font-size: 0.76rem;
   }
- 
+
   .contact-email {
     font-size: 1.02rem;
   }
- 
+
   .browser-domain {
     font-size: 0.6rem;
   }
@@ -440,4 +459,3 @@
     font-size: 0.82rem;
   }
 }
- 

@@ -112,8 +112,8 @@
     <!-- Mobile slide navigation drawer -->
     <div class="mobile-nav" id="mobileNav" aria-hidden="true">
       <ul class="mobile-nav-list">
+        <li><a href="#about" class="mobile-nav-link">ABOUT</a></li>
         <li><a href="#works" class="mobile-nav-link">WORKS</a></li>
-        <li><a href="#about" class="mobile-nav-link">PHILOSOPHY</a></li>
         <li><a href="#skills" class="mobile-nav-link">SKILLS</a></li>
         <li><a href="#contact" class="mobile-nav-link">CONTACT</a></li>
       </ul>
@@ -653,9 +653,8 @@
             <div class="column-header">
               <svg class="column-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
               </svg>
               <h3 class="column-title">CURRENTLY LEARNING</h3>
             </div>
@@ -716,6 +715,83 @@
       </div>
     </section>
 
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow eyebrow-with-icon">
+            <svg class="eyebrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+            <span>WHAT I OFFER</span>
+          </p>
+          <h2 class="section-title">Services</h2>
+          <p class="section-subtitle">
+            Practical solutions built on the skills I use every day, from interfaces to full working web apps.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Web Development Card -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect width="7" height="7" x="3" y="3" rx="1.5"></rect>
+                <rect width="7" height="7" x="14" y="3" rx="1.5"></rect>
+                <rect width="7" height="7" x="14" y="14" rx="1.5"></rect>
+                <rect width="7" height="7" x="3" y="14" rx="1.5"></rect>
+              </svg>
+            </div>
+            <h3 class="service-title">Web development</h3>
+            <p class="service-desc">
+              Responsive, interactive websites built with JavaScript, HTML5, and CSS3.
+            </p>
+          </div>
+
+          <!-- UI/UX Design Card -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle>
+                <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle>
+                <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle>
+                <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle>
+                <path
+                  d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="service-title">UI/UX design</h3>
+            <p class="service-desc">
+              Clean interfaces with clear hierarchy, focused on usability and flow.
+            </p>
+          </div>
+
+          <!-- Backend Basics Card -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect>
+                <rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect>
+                <line x1="6" x2="6.01" y1="6" y2="6"></line>
+                <line x1="6" x2="6.01" y1="18" y2="18"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">Backend basics</h3>
+            <p class="service-desc">
+              Simple server-side features and data handling using PHP.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <!-- Collaboration & Contact Section -->
     <section class="contact-section" id="contact">
       <div class="container">
@@ -738,18 +814,19 @@
             <div class="contact-socials-group">
               <p class="contact-label">SOCIALS</p>
               <div class="contact-social-icons">
-                <a href="https://www.instagram.com/maarwanmohammed/" target="_blank" rel="noopener noreferrer"
-                  class="social-circle-link" aria-label="Instagram">
-                  <i class="fa-brands fa-instagram"></i>
+                <a href="https://wa.me/201070182665?text=Hi%2C%20I%27d%20like%20to%20get%20in%20touch%20regarding%20your%20work."
+                  target="_blank" rel="noopener noreferrer" class="social-circle-link whatsapp-link"
+                  aria-label="WhatsApp">
+                  <i class="fa-brands fa-whatsapp"></i>
                 </a>
 
                 <a href="https://www.linkedin.com/in/marwan-shamekh-b1b2403a6/" target="_blank"
-                  rel="noopener noreferrer" class="social-circle-link" aria-label="linkedin">
+                  rel="noopener noreferrer" class="social-circle-link linkedin-link" aria-label="linkedin">
                   <i class="fa-brands fa-linkedin-in"></i>
                 </a>
 
                 <a href="https://github.com/marwanshamekh" target="_blank" rel="noopener noreferrer"
-                  class="social-circle-link" aria-label="github">
+                  class="social-circle-link github-link" aria-label="github">
                   <i class="fa-brands fa-github"></i>
                 </a>
               </div>
@@ -778,6 +855,7 @@
         <a href="#works" class="footer-link">Works</a>
         <a href="#about" class="footer-link">Philosophy</a>
         <a href="#skills" class="footer-link">Skills</a>
+        <a href="#services" class="footer-link">Services</a>
         <a href="#contact" class="footer-link">Contact</a>
       </nav>
 

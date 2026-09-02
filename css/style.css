@@ -1073,8 +1073,105 @@ body {
   color: #c4b5fd;
 }
 
+/* Services section */
+.services-section {
+  padding: 6rem 0;
+  background-color: var(--bg-main);
+  border-top: 1px solid var(--border-subtle);
+}
 
+.eyebrow-with-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
+.eyebrow-icon {
+  color: var(--text-eyebrow);
+  flex-shrink: 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.service-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-medium),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-medium),
+    background-color var(--transition-fast);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-focus);
+  box-shadow: var(--shadow-md);
+}
+
+.service-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-card-alt);
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform var(--transition-medium), background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.service-card:hover .service-icon-box {
+  transform: scale(1.06);
+}
+
+.service-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.01em;
+}
+
+.service-desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Dark mode overrides for Services */
+[data-theme="dark"] .service-card {
+  background-color: #141414;
+  border-color: #262626;
+}
+
+[data-theme="dark"] .service-card:hover {
+  background-color: #181818;
+  border-color: #383838;
+}
+
+[data-theme="dark"] .service-icon-box {
+  background-color: #202020;
+  border-color: #2e2e2e;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .service-card:hover .service-icon-box {
+  background-color: #262626;
+  border-color: #383838;
+  color: #ffffff;
+}
 
 /* Contact and collaboration section */
 .contact-section {
@@ -1176,7 +1273,25 @@ body {
   color: var(--accent-green);
   background-color: var(--accent-green-light);
   transform: translateY(-3px);
-} 
+}
+
+.whatsapp-link:hover {
+  color: #25D366;
+  background-color: rgba(37, 211, 102, 0.15);
+  transform: translateY(-3px);
+}
+
+.linkedin-link:hover {
+  color: #0A66C2;
+  background-color: rgba(10, 102, 194, 0.15);
+  transform: translateY(-3px);
+}
+
+.github-link:hover {
+  color: #9CA3AF;
+  background-color: rgba(156, 163, 175, 0.15);
+  transform: translateY(-3px);
+}
 
 .contact-card-actions {
   display: flex;
@@ -1643,6 +1758,7 @@ body {
     opacity: 0.5;
     transform: translateY(4px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
