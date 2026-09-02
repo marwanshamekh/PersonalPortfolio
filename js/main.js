@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 0,
       title: 'Hospital Crowding Prediction System',
       image: 'assets/images/project-7.webp',
-      liveUrl: 'https://github.com/marwanshamekh/Hospital-Crowding-Prediction',
+      liveUrl: null,
       sourceUrl: 'https://github.com/marwanshamekh/Hospital-Crowding-Prediction',
       role: 'Machine Learning & AI Developer',
       techStack: 'Python, Scikit-Learn, Pandas, NumPy',
@@ -465,11 +465,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update header links
     if (modalLiveLink) {
-      modalLiveLink.href = currentProject.liveUrl;
+      if (currentProject.liveUrl) {
+        modalLiveLink.href = currentProject.liveUrl;
+        modalLiveLink.style.display = 'inline-flex';
+      } else {
+        modalLiveLink.style.display = 'none';
+      }
     }
 
     if (modalSourceLink) {
-      modalSourceLink.href = currentProject.sourceUrl;
+      if (currentProject.sourceUrl) {
+        modalSourceLink.href = currentProject.sourceUrl;
+        modalSourceLink.style.display = 'inline-flex';
+      } else {
+        modalSourceLink.style.display = 'none';
+      }
     }
 
     // Update core features numbered list
