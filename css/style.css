@@ -804,316 +804,110 @@ body {
   }
 }
 
-/* Philosophy and story section */
+/* Philosophy & Journey (About) section */
 .philosophy-section {
   padding: 6rem 0;
   background-color: var(--bg-main);
   border-top: 1px solid var(--border-subtle);
 }
 
-.philosophy-layout {
+.about-layout {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 5rem;
+  grid-template-columns: 1.15fr 0.88fr;
+  gap: 4.5rem;
   align-items: flex-start;
 }
 
-.philosophy-narrative p {
+/* Left Column: Narrative Content */
+.about-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.8vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+  margin-bottom: 2rem;
+}
+
+.about-narrative p {
   font-size: 1.05rem;
   line-height: 1.8;
   color: var(--text-muted);
   margin-bottom: 1.75rem;
 }
 
-.philosophy-narrative p:last-child {
+.about-narrative p:last-child {
   margin-bottom: 0;
 }
 
-.core-values-container {
-  background-color: var(--bg-main);
-}
-
-.values-header {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 1.75rem;
-  color: var(--text-main);
-}
-
-.compass-icon {
-  color: var(--text-muted);
-}
-
-.values-header-title {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--text-main);
-}
-
-.values-list {
-  list-style: none;
+/* Right Column: Skills Badges */
+.about-skills {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-}
-
-.value-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.25rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.value-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.value-number {
-  font-family: monospace;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-light);
+  gap: 2.25rem;
   padding-top: 0.15rem;
 }
 
-.value-name {
-  font-family: var(--font-display);
-  font-size: 1.02rem;
-  font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 0.35rem;
-}
-
-.value-desc {
-  font-size: 0.88rem;
-  line-height: 1.55;
-  color: var(--text-muted);
-}
-
-/* Skills and expertise section */
-.skills-section {
-  padding: 6rem 0;
-  background-color: var(--bg-main);
-  border-top: 1px solid var(--border-subtle);
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-}
-
-.column-header {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding-bottom: 1rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border-light);
-  color: var(--text-main);
-}
-
-.column-icon {
-  color: var(--text-muted);
-}
-
-.column-title {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--text-main);
-}
-
-.skills-items {
+.about-skill-group {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
 }
 
-.skill-card {
+.about-skill-category {
+  font-family: var(--font-primary);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-eyebrow);
+  margin-bottom: 0.9rem;
+}
+
+.skill-pills {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 0.85rem;
-  border-radius: var(--radius-md);
-  transition: background-color var(--transition-fast), transform var(--transition-fast);
-}
-
-.skill-card:hover {
-  background-color: var(--bg-card-alt);
-}
-
-.skill-icon-badge {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-sm);
-  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
   align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-weight: 700;
-  font-size: 0.75rem;
 }
 
-.js-badge {
-  background-color: #fef08a;
-  color: #854d0e;
-}
-
-.html-badge {
-  background-color: #ffedd5;
-  color: #9a3412;
-}
-
-.uiux-badge {
-  background-color: #e0e7ff;
-  color: #3730a3;
-}
-
-.git-badge {
-  background-color: #fee2e2;
-  color: #b91c1c;
-}
-
-.ai-badge {
-  background-color: #e0e7ff;
-  color: #4338ca;
-}
-
-.java-badge {
-  background-color: #e0f2fe;
-  color: #0369a1;
-}
-
-.python-badge {
-  background-color: #dcfce7;
-  color: #15803d;
-}
-
-.cpp-badge {
-  background-color: #f3e8ff;
-  color: #6b21a8;
-}
-
-.oop-badge {
-  background-color: #fef3c7;
-  color: #92400e;
-}
-
-.ps-badge {
-  background-color: #ede9fe;
-  color: #5b21b6;
-}
-
-.tw-badge {
-  background-color: #ccfbf1;
-  color: #0f766e;
-}
-
-.co-badge {
-  background-color: #fed7aa;
-  color: #9a3412;
-}
-
-
-
-.badge-text {
-  font-family: var(--font-display);
-  font-weight: 700;
-}
-
-.skill-info {
-  flex-grow: 1;
-}
-
-.skill-title-row {
-  display: flex;
+.skill-pill {
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-}
-
-.skill-name {
-  font-family: var(--font-display);
-  font-size: 0.95rem;
-  font-weight: 700;
+  padding: 0.55rem 1.05rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1.4;
   color: var(--text-main);
-  margin-bottom: 0.2rem;
+  background-color: var(--bg-card-alt);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: default;
+  user-select: none;
 }
 
-.learning-tag {
-  font-size: 0.65rem;
-  font-weight: 600;
-  background-color: var(--accent-green-light);
-  color: var(--accent-green);
-  padding: 2px 7px;
-  border-radius: 20px;
-  border: 1px solid var(--learning-tag-border);
-  letter-spacing: 0.04em;
+.skill-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-focus);
+  box-shadow: var(--shadow-sm);
 }
 
-[data-theme="dark"] .js-badge {
-  background-color: #2a2408;
-  color: #fde047;
+[data-theme="dark"] .skill-pill {
+  background-color: #141414;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #ededed;
 }
 
-[data-theme="dark"] .html-badge {
-  background-color: #33190a;
-  color: #fdba74;
-}
-
-[data-theme="dark"] .uiux-badge {
-  background-color: #1e1e3b;
-  color: #a5b4fc;
-}
-
-[data-theme="dark"] .git-badge {
-  background-color: #3a1414;
-  color: #fca5a5;
-}
-
-[data-theme="dark"] .ai-badge {
-  background-color: #1e1b4b;
-  color: #a5b4fc;
-}
-
-[data-theme="dark"] .java-badge {
-  background-color: #0c263d;
-  color: #7dd3fc;
-}
-
-[data-theme="dark"] .python-badge {
-  background-color: #12301c;
-  color: #86efac;
-}
-
-[data-theme="dark"] .cpp-badge {
-  background-color: #2b173c;
-  color: #d8b4fe;
-}
-
-
-[data-theme="dark"] .oop-badge {
-  background-color: #332508;
-  color: #fcd34d;
-}
-
-[data-theme="dark"] .ps-badge {
-  background-color: #2e1a47;
-  color: #c4b5fd;
-}
-
-[data-theme="dark"] .tw-badge {
-  background-color: #0a2e2a;
-  color: #5eead4;
-}
-
-[data-theme="dark"] .co-badge {
-  background-color: #3a2008;
-  color: #fdba74;
+[data-theme="dark"] .skill-pill:hover {
+  background-color: #1c1c1c;
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -1125,88 +919,174 @@ body {
   border-top: 1px solid var(--border-subtle);
 }
 
-
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
-}
-
-.service-card {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-light);
-  border-radius: var(--radius-lg);
-  padding: 2.25rem 2rem;
+/* Services accordion container */
+.services-accordion {
   display: flex;
   flex-direction: column;
-  transition: transform var(--transition-medium),
-    border-color var(--transition-fast),
-    box-shadow var(--transition-medium),
-    background-color var(--transition-fast);
+  width: 100%;
+  margin-top: 3.5rem;
 }
 
-.service-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-focus);
-  box-shadow: var(--shadow-md);
+/* Single accordion item row */
+.service-accordion-item {
+  position: relative;
+  border-top: 1px solid var(--border-light);
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
-.service-icon-box {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
+.service-accordion-item:last-child {
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Visual left indicator line when row is open */
+.service-accordion-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--accent-green);
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform var(--transition-medium);
+  z-index: 2;
+}
+
+.service-accordion-item.is-open::before {
+  transform: scaleY(1);
+}
+
+.service-accordion-item:hover {
   background-color: var(--bg-card-alt);
+}
+
+.service-accordion-item.is-open {
+  background-color: var(--bg-card-alt);
+}
+
+/* Header row containing number, title, and toggle button */
+.service-accordion-header {
+  display: flex;
+  align-items: center;
+  padding: 2.25rem 1.5rem;
+  user-select: none;
+}
+
+.service-accordion-number {
+  font-family: monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-light);
+  min-width: 48px;
+  flex-shrink: 0;
+  transition: color var(--transition-fast);
+}
+
+.service-accordion-item:hover .service-accordion-number,
+.service-accordion-item.is-open .service-accordion-number {
+  color: var(--text-main);
+}
+
+.service-accordion-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.8vw, 1.95rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-main);
+  margin: 0;
+  flex-grow: 1;
+  transition: color var(--transition-fast);
+}
+
+/* Circular toggle button */
+.service-accordion-toggle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
   border: 1px solid var(--border-light);
+  background-color: transparent;
   color: var(--text-main);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
-  transition: transform var(--transition-medium), background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  flex-shrink: 0;
+  cursor: pointer;
+  margin-left: 1.5rem;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast), transform var(--transition-fast);
 }
 
-.service-card:hover .service-icon-box {
-  transform: scale(1.06);
+.service-accordion-item:hover .service-accordion-toggle {
+  border-color: var(--border-focus);
 }
 
-.service-title {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--text-main);
-  margin-bottom: 0.65rem;
-  letter-spacing: -0.01em;
+.service-accordion-item.is-open .service-accordion-toggle {
+  border-color: var(--border-focus);
+  background-color: var(--bg-card);
 }
 
-.service-desc {
-  font-size: 0.92rem;
-  line-height: 1.6;
+/* Plus icon transforming into cross icon */
+.toggle-icon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  transition: transform var(--transition-medium);
+}
+
+.toggle-icon::before,
+.toggle-icon::after {
+  content: '';
+  position: absolute;
+  background-color: currentColor;
+  border-radius: 1px;
+  transition: transform var(--transition-medium);
+}
+
+.toggle-icon::before {
+  top: 6px;
+  left: 0;
+  width: 14px;
+  height: 2px;
+}
+
+.toggle-icon::after {
+  top: 0;
+  left: 6px;
+  width: 2px;
+  height: 14px;
+}
+
+.service-accordion-item.is-open .toggle-icon {
+  transform: rotate(45deg);
+}
+
+/* Accordion body wrapper for smooth vertical slide */
+.service-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+.service-accordion-item.is-open .service-accordion-body {
+  opacity: 1;
+}
+
+/* Inner content with description */
+.service-accordion-content {
+  padding: 0 1.5rem 2.25rem calc(48px + 1.5rem);
+}
+
+.service-accordion-text {
+  font-size: 1.05rem;
+  line-height: 1.75;
   color: var(--text-muted);
+  max-width: 680px;
   margin: 0;
-}
-
-/* Dark mode overrides for Services */
-[data-theme="dark"] .service-card {
-  background-color: #141414;
-  border-color: #262626;
-}
-
-[data-theme="dark"] .service-card:hover {
-  background-color: #181818;
-  border-color: #383838;
-}
-
-[data-theme="dark"] .service-icon-box {
-  background-color: #202020;
-  border-color: #2e2e2e;
-  color: #ffffff;
-}
-
-[data-theme="dark"] .service-card:hover .service-icon-box {
-  background-color: #262626;
-  border-color: #383838;
-  color: #ffffff;
 }
 
 /* Contact and collaboration section */

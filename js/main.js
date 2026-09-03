@@ -616,5 +616,60 @@ document.addEventListener('DOMContentLoaded', () => {
       renderProjectModal(nextIndex);
     }
   });
+
+  // Toggle a single services accordion row open or closed
+  function toggleServiceAccordion(row) {
+    const body = row.querySelector('.service-accordion-body');
+    const toggleBtn = row.querySelector('.service-accordion-toggle');
+    if (!body) return;
+
+    // Check if the row is open by inspecting the inline max-height property
+    const currentHeight = parseFloat(body.style.maxHeight) || 0;
+    const isOpen = currentHeight > 0;
+
+    if (!isOpen) {
+      // Expand the content to its natural scroll height
+      body.style.maxHeight = body.scrollHeight + 'px';
+      // Add the open class for visual indicator and icon transformation
+      row.classList.add('is-open');
+      if (toggleBtn) {
+        toggleBtn.setAttribute('aria-expanded', 'true');
+      }
+    } else {
+      // Collapse the content back to zero height
+      body.style.maxHeight = '0px';
+      // Remove the open class to reset visual indicator and icon
+      row.classList.remove('is-open');
+      if (toggleBtn) {
+        toggleBtn.setAttribute('aria-expanded', 'false');
+      }
+    }
+  }
+
+  // Bind click event to each service accordion row
+  const serviceAccordionRows = document.querySelectorAll('.service-accordion-item');
+  serviceAccordionRows.forEach((row) => {
+    row.addEventListener('click', () => {
+      toggleServiceAccordion(row);
+    });
+
+    // Support keyboard activation with Enter and Space keys
+    row.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleServiceAccordion(row);
+      }
+    });
+  });
+
+  // Recalculate max-height on window resize for any open accordion row
+  window.addEventListener('resize', () => {
+    serviceAccordionRows.forEach((row) => {
+      const body = row.querySelector('.service-accordion-body');
+      if (body && (parseFloat(body.style.maxHeight) || 0) > 0) {
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    });
+  });
 });
 
