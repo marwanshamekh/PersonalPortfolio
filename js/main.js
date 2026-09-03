@@ -38,10 +38,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // Toggle mobile navigation drawer
   const toggleMobileMenu = () => {
     const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
-    mobileToggle.setAttribute('aria-expanded', !isExpanded);
-    mobileToggle.classList.toggle('is-active');
-    mobileNav.classList.toggle('is-open');
-    mobileNav.setAttribute('aria-hidden', isExpanded);
+    const willOpen = !isExpanded;
+
+    if (!willOpen) {
+      if (document.activeElement && mobileNav.contains(document.activeElement)) {
+        document.activeElement.blur();
+      }
+      mobileToggle.focus();
+      mobileNav.setAttribute('inert', '');
+    } else {
+      mobileNav.removeAttribute('inert');
+    }
+
+    mobileToggle.setAttribute('aria-expanded', String(willOpen));
+    mobileToggle.classList.toggle('is-active', willOpen);
+    mobileNav.classList.toggle('is-open', willOpen);
+    mobileNav.setAttribute('aria-hidden', String(!willOpen));
   };
 
   if (mobileToggle && mobileNav) {
@@ -530,25 +542,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const openProjectModal = (index) => {
+  let lastFocusedTrigger = null;
+
+  const openProjectModal = (index, triggerElement = null) => {
     if (!projectModal) return;
+    lastFocusedTrigger = triggerElement || (document.activeElement !== document.body ? document.activeElement : null);
     renderProjectModal(index);
     if (projectModalDialog) {
       projectModalDialog.scrollTop = 0;
     }
     projectModal.classList.add('is-active');
     projectModal.setAttribute('aria-hidden', 'false');
+    projectModal.removeAttribute('inert');
     document.body.style.overflow = 'hidden';
 
     if (lenis) {
       lenis.stop();
     }
+
+    // Set focus safely to the close button inside modal
+    setTimeout(() => {
+      if (projectModalClose) {
+        projectModalClose.focus();
+      }
+    }, 50);
   };
 
   const closeProjectModal = () => {
     if (!projectModal) return;
+
+    // 1. Defocus any element inside modal BEFORE setting aria-hidden="true"
+    if (document.activeElement && projectModal.contains(document.activeElement)) {
+      document.activeElement.blur();
+    }
+
+    // 2. Restore focus to the trigger that opened the modal
+    if (lastFocusedTrigger && typeof lastFocusedTrigger.focus === 'function') {
+      try {
+        lastFocusedTrigger.focus();
+      } catch (e) {
+        // Fallback safely
+      }
+    }
+
+    // 3. Mark modal as hidden and inactive
     projectModal.classList.remove('is-active');
     projectModal.setAttribute('aria-hidden', 'true');
+    projectModal.setAttribute('inert', '');
     document.body.style.overflow = '';
 
     if (lenis) {
@@ -556,8 +596,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Attach card click handlers for project showcase
+  // Attach card click and keyboard handlers for project showcase
   if (projectsGrid) {
+    const projectCards = projectsGrid.querySelectorAll('.project-card');
+    projectCards.forEach((card) => {
+      if (!card.hasAttribute('tabindex')) {
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-haspopup', 'dialog');
+      }
+    });
+
     projectsGrid.addEventListener('click', (e) => {
       const card = e.target.closest('.project-card');
       if (!card) return;
@@ -567,7 +616,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const index = parseInt(indexAttr, 10);
         if (!isNaN(index)) {
           e.preventDefault();
-          openProjectModal(index);
+          openProjectModal(index, card);
+        }
+      }
+    });
+
+    projectsGrid.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        const card = e.target.closest('.project-card');
+        if (!card) return;
+
+        const indexAttr = card.getAttribute('data-project-index');
+        if (indexAttr !== null) {
+          const index = parseInt(indexAttr, 10);
+          if (!isNaN(index)) {
+            e.preventDefault();
+            openProjectModal(index, card);
+          }
         }
       }
     });
@@ -602,11 +667,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Keyboard navigation
+  // Keyboard navigation & accessibility focus trap
   document.addEventListener('keydown', (e) => {
     if (!projectModal || !projectModal.classList.contains('is-active')) return;
 
     if (e.key === 'Escape') {
+      e.preventDefault();
       closeProjectModal();
     } else if (e.key === 'ArrowLeft') {
       const prevIndex = (currentProjectIndex - 1 + projectsData.length) % projectsData.length;
@@ -614,6 +680,31 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (e.key === 'ArrowRight') {
       const nextIndex = (currentProjectIndex + 1) % projectsData.length;
       renderProjectModal(nextIndex);
+    } else if (e.key === 'Tab') {
+      // Keep focus trapped within the modal while it is open
+      const focusableElements = projectModal.querySelectorAll(
+        'button:not([disabled]), [href]:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      );
+      const visibleElements = Array.from(focusableElements).filter(
+        (el) => el.offsetWidth > 0 || el.offsetHeight > 0 || el.getClientRects().length > 0
+      );
+
+      if (visibleElements.length > 0) {
+        const firstEl = visibleElements[0];
+        const lastEl = visibleElements[visibleElements.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstEl || !projectModal.contains(document.activeElement)) {
+            e.preventDefault();
+            lastEl.focus();
+          }
+        } else {
+          if (document.activeElement === lastEl || !projectModal.contains(document.activeElement)) {
+            e.preventDefault();
+            firstEl.focus();
+          }
+        }
+      }
     }
   });
 
