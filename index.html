@@ -607,45 +607,63 @@
               Whether you have a clear project idea or you're just getting started, feel free to reach out. I’m always
               open to discussing new ideas, creative projects, and opportunities to collaborate.
             </p>
-          </div>
 
-          <div class="contact-card">
-            <div class="contact-card-header">
-              <p class="contact-label">DIRECT CONTACT</p>
-              <a href="mailto:marwanmuhmmed25122007@gmail.com" class="contact-email">marwanmuhmmed25122007@gmail.com</a>
-            </div>
-            <div class="contact-card-divider"></div>
-            <div class="contact-socials-group">
-              <p class="contact-label">SOCIALS</p>
-              <div class="contact-social-icons">
-                <a href="https://wa.me/201070182665?text=Hi%2C%20I%27d%20like%20to%20get%20in%20touch%20regarding%20your%20work."
-                  target="_blank" rel="noopener noreferrer" class="social-circle-link whatsapp-link"
-                  aria-label="WhatsApp">
-                  <i class="fa-brands fa-whatsapp"></i>
-                </a>
+            <div class="contact-direct-info">
+              <div class="contact-info-item">
+                <span class="contact-info-label">DIRECT EMAIL</span>
+                <a href="mailto:marwanmuhmmed25122007@gmail.com" class="contact-info-value">marwanmuhmmed25122007@gmail.com</a>
+              </div>
 
-                <a href="https://www.linkedin.com/in/marwan-shamekh-b1b2403a6/" target="_blank"
-                  rel="noopener noreferrer" class="social-circle-link linkedin-link" aria-label="linkedin">
-                  <i class="fa-brands fa-linkedin-in"></i>
-                </a>
+              <div class="contact-info-item">
+                <span class="contact-info-label">CONNECT ON SOCIALS</span>
+                <div class="contact-social-icons">
+                  <a href="https://wa.me/201070182665?text=Hi%2C%20I%27d%20like%20to%20get%20in%20touch%20regarding%20your%20work."
+                    target="_blank" rel="noopener noreferrer" class="social-circle-link whatsapp-link"
+                    aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </a>
 
-                <a href="https://github.com/marwanshamekh" target="_blank" rel="noopener noreferrer"
-                  class="social-circle-link github-link" aria-label="github">
-                  <i class="fa-brands fa-github"></i>
-                </a>
+                  <a href="https://www.linkedin.com/in/marwan-shamekh-b1b2403a6/" target="_blank"
+                    rel="noopener noreferrer" class="social-circle-link linkedin-link" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+
+                  <a href="https://github.com/marwanshamekh" target="_blank" rel="noopener noreferrer"
+                    class="social-circle-link github-link" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
               </div>
             </div>
-            <div class="contact-card-divider"></div>
-            <div class="contact-card-actions">
-              <a href="mailto:marwanmuhmmed25122007@gmail.com" class="contact-link-let">
-                <span>LET'S CONNECT</span>
-                <svg class="arrow-icon" width="14" height="14" viewBox="0 0 16 16" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3.33337 8H12.6667M12.6667 8L8.66671 4M12.6667 8L8.66671 12" stroke="currentColor"
-                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </a>
+          </div>
+
+          <div class="contact-form-card">
+            <div class="contact-form-header">
+              <p class="contact-form-label">SEND A MESSAGE</p>
             </div>
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="contact-form-group">
+                <label for="contactName" class="sr-only">Your name</label>
+                <input type="text" id="contactName" name="name" class="contact-form-input"
+                  placeholder="Your name" required autocomplete="name">
+              </div>
+
+              <div class="contact-form-group">
+                <label for="contactEmail" class="sr-only">Your email</label>
+                <input type="email" id="contactEmail" name="email" class="contact-form-input"
+                  placeholder="Your email" required autocomplete="email">
+              </div>
+
+              <div class="contact-form-group">
+                <label for="contactMessage" class="sr-only">Tell me about your project...</label>
+                <textarea id="contactMessage" name="message" class="contact-form-textarea"
+                  placeholder="Tell me about your project..." rows="4" required></textarea>
+              </div>
+
+              <button type="submit" class="contact-form-btn" id="contactSubmitBtn">Send Message</button>
+
+              <div class="contact-form-status" id="contactFormStatus" aria-live="polite"></div>
+            </form>
           </div>
         </div>
       </div>

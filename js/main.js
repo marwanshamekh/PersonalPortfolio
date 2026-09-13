@@ -762,5 +762,92 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+
+  // Contact Form Google Sheets Integration
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwMJ-1gjYDqofeIjNXi9Bxqq2sNPQrP9jIkwdM53mqnMkTt7_HQc5d6dJ5ZyoTsnNCC/exec';
+  const contactForm = document.getElementById('contactForm') || document.getElementById('contact-form');
+  const contactStatus = document.getElementById('contactFormStatus');
+  const contactNameInput = document.getElementById('contactName');
+  const contactEmailInput = document.getElementById('contactEmail');
+  const contactMessageInput = document.getElementById('contactMessage');
+
+  if (contactForm) {
+    [contactNameInput, contactEmailInput, contactMessageInput].forEach((input) => {
+      if (!input) return;
+      input.addEventListener('input', () => {
+        input.classList.remove('is-invalid');
+        if (contactStatus && contactStatus.classList.contains('is-error')) {
+          contactStatus.style.display = 'none';
+          contactStatus.className = 'contact-form-status';
+        }
+      });
+    });
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = contactNameInput ? contactNameInput.value.trim() : '';
+      const email = contactEmailInput ? contactEmailInput.value.trim() : '';
+      const message = contactMessageInput ? contactMessageInput.value.trim() : '';
+
+      let hasError = false;
+
+      if (!name) {
+        if (contactNameInput) contactNameInput.classList.add('is-invalid');
+        hasError = true;
+      }
+      if (!email || !emailRegex.test(email)) {
+        if (contactEmailInput) contactEmailInput.classList.add('is-invalid');
+        hasError = true;
+      }
+      if (!message) {
+        if (contactMessageInput) contactMessageInput.classList.add('is-invalid');
+        hasError = true;
+      }
+
+      if (hasError) {
+        if (contactStatus) {
+          contactStatus.style.display = 'block';
+          contactStatus.textContent = 'Please fill out all fields with a valid email address.';
+          contactStatus.className = 'contact-form-status is-error';
+        }
+        const firstInvalid = contactForm.querySelector('.is-invalid');
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
+
+      const requestBody = new FormData(contactForm);
+
+      const handleSuccess = () => {
+        contactForm.reset();
+        if (contactStatus) {
+          contactStatus.style.display = 'block';
+          contactStatus.textContent = 'Your message has been sent successfully!';
+          contactStatus.className = 'contact-form-status is-success';
+
+          setTimeout(() => {
+            contactStatus.style.display = 'none';
+            contactStatus.className = 'contact-form-status';
+          }, 4000);
+        }
+      };
+
+      fetch(scriptURL, {
+        method: 'POST',
+        body: requestBody,
+        mode: 'no-cors'
+      })
+        .then(() => {
+          handleSuccess();
+        })
+        .catch((error) => {
+          console.error('Error!', error.message);
+        });
+    });
+  }
 });
+
 
