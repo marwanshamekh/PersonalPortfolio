@@ -1338,9 +1338,19 @@ body {
 }
 
 @keyframes formShake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-4px); }
-  75% { transform: translateX(4px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-4px);
+  }
+
+  75% {
+    transform: translateX(4px);
+  }
 }
 
 .contact-form-textarea {
@@ -1368,18 +1378,15 @@ body {
   gap: 0.6rem;
   margin-top: 0.25rem;
   box-shadow: var(--contact-btn-shadow);
-  transition: background-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  transition: background-color 0.25s ease;
 }
 
 .contact-form-btn:hover {
   background-color: var(--contact-btn-hover-bg);
-  transform: translateY(-2px);
-  box-shadow: var(--contact-btn-hover-shadow);
 }
 
 .contact-form-btn:active {
   transform: translateY(0);
-  box-shadow: var(--contact-btn-shadow);
 }
 
 .contact-form-btn:focus-visible {
@@ -1411,7 +1418,9 @@ body {
 }
 
 @keyframes btnSpin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Form status feedback message */
@@ -1443,8 +1452,15 @@ body {
 }
 
 @keyframes statusFadeIn {
-  from { opacity: 0; transform: translateY(-4px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Site footer */
