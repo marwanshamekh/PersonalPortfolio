@@ -54,52 +54,39 @@
   <!-- Top navigation bar -->
   <header class="site-header" id="header">
     <div class="container header-container">
-      <a href="#hero" class="brand-logo" aria-label="Marwan Home">
-        <svg class="brand-logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="50 50 100 100" width="28" height="28">
-          <!-- Logo Mark (Circle) -->
-          <circle cx="100" cy="100" r="46" fill="#0b0b0b" />
+      <div class="header-left">
+        <a href="#hero" class="brand-logo" aria-label="Marwan Shamekh">
+          <svg class="brand-logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="50 50 100 100" width="28"
+            height="28">
+            <!-- Logo Mark (Circle) -->
+            <circle cx="100" cy="100" r="46" fill="#0b0b0b" />
 
-          <!-- "ms" Monogram -->
-          <g stroke="#ffffff" stroke-width="5.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <!-- 'm' -->
-            <path d="M 66 112 V 96 Q 66 86 75 86 Q 84 86 84 96 V 112 M 84 96 Q 84 86 93 86 Q 102 86 102 96 V 112" />
+            <!-- "ms" Monogram -->
+            <g stroke="#ffffff" stroke-width="5.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <!-- 'm' -->
+              <path d="M 66 112 V 96 Q 66 86 75 86 Q 84 86 84 96 V 112 M 84 96 Q 84 86 93 86 Q 102 86 102 96 V 112" />
 
-            <!-- 's' -->
-            <path
-              d="M 134 88 H 122 Q 112 88 112 95 Q 112 100 120 100 H 126 Q 134 100 134 106 Q 134 112 122 112 H 112" />
-          </g>
-        </svg>
-        <span class="brand-name">Marwan Shamekh</span>
-      </a>
-
-      <div class="header-actions">
-        <nav class="desktop-nav" aria-label="Primary Navigation">
-          <ul class="nav-list">
-            <li><a href="#about" class="nav-link">ABOUT</a></li>
-            <li><a href="#works" class="nav-link">WORKS</a></li>
-            <li><a href="#services" class="nav-link">SERVICES</a></li>
-            <li><a href="#contact" class="nav-link">CONTACT</a></li>
-          </ul>
-        </nav>
-
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle theme">
-          <svg class="theme-icon sun-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              <!-- 's' -->
+              <path
+                d="M 134 88 H 122 Q 112 88 112 95 Q 112 100 120 100 H 126 Q 134 100 134 106 Q 134 112 122 112 H 112" />
+            </g>
           </svg>
-          <svg class="theme-icon moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
+        </a>
+      </div>
+
+      <nav class="desktop-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link">ABOUT</a></li>
+          <li><a href="#works" class="nav-link">WORKS</a></li>
+          <li><a href="#services" class="nav-link">SERVICES</a></li>
+          <li><a href="#contact" class="nav-link">CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-text theme-text-light">LIGHT</span>
+          <span class="theme-text theme-text-dark">DARK</span>
         </button>
 
         <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -544,14 +531,16 @@
             <div class="service-accordion-header">
               <span class="service-accordion-number">01</span>
               <h3 class="service-accordion-title">Web development</h3>
-              <button type="button" class="service-accordion-toggle" aria-expanded="false" aria-label="Toggle Web development details">
+              <button type="button" class="service-accordion-toggle" aria-expanded="false"
+                aria-label="Toggle Web development details">
                 <span class="toggle-icon"></span>
               </button>
             </div>
             <div class="service-accordion-body">
               <div class="service-accordion-content">
                 <p class="service-accordion-text">
-                  Responsive, interactive websites built with JavaScript, HTML5, and CSS3. Focused on clean code, seamless performance, and modern web experiences.
+                  Responsive, interactive websites built with JavaScript, HTML5, and CSS3. Focused on clean code,
+                  seamless performance, and modern web experiences.
                 </p>
               </div>
             </div>
@@ -562,14 +551,16 @@
             <div class="service-accordion-header">
               <span class="service-accordion-number">02</span>
               <h3 class="service-accordion-title">UI/UX design</h3>
-              <button type="button" class="service-accordion-toggle" aria-expanded="false" aria-label="Toggle UI/UX design details">
+              <button type="button" class="service-accordion-toggle" aria-expanded="false"
+                aria-label="Toggle UI/UX design details">
                 <span class="toggle-icon"></span>
               </button>
             </div>
             <div class="service-accordion-body">
               <div class="service-accordion-content">
                 <p class="service-accordion-text">
-                  Clean interfaces with clear hierarchy, focused on usability and flow. Thoughtful design systems that turn complex interactions into intuitive experiences.
+                  Clean interfaces with clear hierarchy, focused on usability and flow. Thoughtful design systems that
+                  turn complex interactions into intuitive experiences.
                 </p>
               </div>
             </div>
@@ -580,14 +571,16 @@
             <div class="service-accordion-header">
               <span class="service-accordion-number">03</span>
               <h3 class="service-accordion-title">AI automation</h3>
-              <button type="button" class="service-accordion-toggle" aria-expanded="false" aria-label="Toggle AI automation details">
+              <button type="button" class="service-accordion-toggle" aria-expanded="false"
+                aria-label="Toggle AI automation details">
                 <span class="toggle-icon"></span>
               </button>
             </div>
             <div class="service-accordion-body">
               <div class="service-accordion-content">
                 <p class="service-accordion-text">
-                  Smart automated workflows designed to streamline repetitive tasks, integrate intelligent APIs, and improve productivity with modern AI tools.
+                  Smart automated workflows designed to streamline repetitive tasks, integrate intelligent APIs, and
+                  improve productivity with modern AI tools.
                 </p>
               </div>
             </div>
@@ -611,7 +604,8 @@
             <div class="contact-direct-info">
               <div class="contact-info-item">
                 <span class="contact-info-label">DIRECT EMAIL</span>
-                <a href="mailto:marwanmuhmmed25122007@gmail.com" class="contact-info-value">marwanmuhmmed25122007@gmail.com</a>
+                <a href="mailto:marwanmuhmmed25122007@gmail.com"
+                  class="contact-info-value">marwanmuhmmed25122007@gmail.com</a>
               </div>
 
               <div class="contact-info-item">
@@ -644,14 +638,14 @@
             <form class="contact-form" id="contactForm" novalidate>
               <div class="contact-form-group">
                 <label for="contactName" class="sr-only">Your name</label>
-                <input type="text" id="contactName" name="name" class="contact-form-input"
-                  placeholder="Your name" required autocomplete="name">
+                <input type="text" id="contactName" name="name" class="contact-form-input" placeholder="Your name"
+                  required autocomplete="name">
               </div>
 
               <div class="contact-form-group">
                 <label for="contactEmail" class="sr-only">Your email</label>
-                <input type="email" id="contactEmail" name="email" class="contact-form-input"
-                  placeholder="Your email" required autocomplete="email">
+                <input type="email" id="contactEmail" name="email" class="contact-form-input" placeholder="Your email"
+                  required autocomplete="email">
               </div>
 
               <div class="contact-form-group">

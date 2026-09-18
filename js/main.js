@@ -7,11 +7,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section[id]');
 
   // Theme toggle functionality
+  const updateThemeAria = (theme) => {
+    if (themeToggle) {
+      const isDark = theme === 'dark';
+      themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      themeToggle.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+  };
+
   const toggleTheme = () => {
     const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
     document.documentElement.setAttribute('data-theme', newTheme);
+    updateThemeAria(newTheme);
     try {
       localStorage.setItem('theme', newTheme);
     } catch (e) {
@@ -20,6 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (themeToggle) {
+    const initialTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    updateThemeAria(initialTheme);
     themeToggle.addEventListener('click', toggleTheme);
   }
 
