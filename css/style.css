@@ -1240,28 +1240,27 @@ body {
   color: var(--accent-green);
   background-color: var(--accent-green-light);
   border-color: var(--border-focus);
-  transform: translateY(-3px);
 }
 
 .whatsapp-link:hover {
   color: #25D366;
   background-color: rgba(37, 211, 102, 0.15);
   border-color: rgba(37, 211, 102, 0.3);
-  transform: translateY(-3px);
+  
 }
 
 .linkedin-link:hover {
   color: #0A66C2;
   background-color: rgba(10, 102, 194, 0.15);
   border-color: rgba(10, 102, 194, 0.3);
-  transform: translateY(-3px);
+  
 }
 
 .github-link:hover {
   color: #9CA3AF;
   background-color: rgba(156, 163, 175, 0.15);
   border-color: rgba(156, 163, 175, 0.3);
-  transform: translateY(-3px);
+  
 }
 
 /* Contact Form Card matching reference design */
