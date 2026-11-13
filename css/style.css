@@ -542,9 +542,6 @@ body {
   font-size: 0.95rem;
 }
 
-.arrow-icon {
-  transition: transform var(--transition-fast);
-}
 
 .hero-media {
   display: flex;
