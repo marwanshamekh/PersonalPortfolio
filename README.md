@@ -1,4 +1,4 @@
-# Personal Portfolio 🌐
+# Personal Portfolio
 
 ![Portfolio Preview](assets/images/readmePhoto.webp)
 
